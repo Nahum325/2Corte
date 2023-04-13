@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 
+//Definir los equipos
 char* japan[] = {"Kyo Kusanagi", "Benimaru Nikaido", "Goro Daimon"};
 char* usa[] = {"Terry Bogard", "Andy Bogard", "Joe Higashi"};
 char* china[] = {"Chin Gentsai", "Chang Koehan", "Choi Bounge"};
@@ -13,7 +14,7 @@ char* ikari[] = {"Leona Heidern", "Ralf Jones", "Clark Still"};
 
 char equipos[8][20];
 int num_equipos = 0;
-s
+
 
 %}
 %%
