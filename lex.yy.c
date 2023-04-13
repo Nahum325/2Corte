@@ -2067,7 +2067,7 @@ int main(int argc, char** argv) {
 
   printf("Equipos reconocidos:\n");
     for (int i = 0; i < num_equipos; i++) {
-        printf("%s\n", equipos[i][2]);
+        printf("%s\n", equipos[i]);
     }
 
   fclose(archivo);
