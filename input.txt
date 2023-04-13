@@ -1,0 +1,17 @@
+japan
+usa
+u+d+C
+d,df,f+A
+f,d,df+C
+b,d,db+B
+b,d,db+D
+d,db,b,db,d,df,f+C
+
+u+d+D
+d,df,f+A
+d,df,f+C
+d,db,b+A
+d,~,u+C
+b,db,d,df,f+B
+b,db,d,df,f+D
+f,db,f+B+C
