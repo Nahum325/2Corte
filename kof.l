@@ -13,7 +13,7 @@ char* ikari[] = {"Leona Heidern", "Ralf Jones", "Clark Still"};
 
 char equipos[8][20];
 int num_equipos = 0;
-
+s
 
 %}
 %%
