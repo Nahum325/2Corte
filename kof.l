@@ -2,31 +2,31 @@
 #include <stdio.h>
 
 //Definir los equipos
-char* japan[] = {"Kyo Kusanagi", "Benimaru Nikaido", "Goro Daimon"};
-char* usa[] = {"Terry Bogard", "Andy Bogard", "Joe Higashi"};
-char* china[] = {"Chin Gentsai", "Chang Koehan", "Choi Bounge"};
-char* brazil[] = {"Ryo Sakazaki", "Robert Garcia", "Takuma Sakazaki"};
-char* korea[] = {"Kim Kaphwan", "Chang Koehan", "Choi Bounge"};
-char* italy[] = {"Mai Shiranui", "King", "Yuri Sakazaki"};
-char* england[] = {"Billy Kane", "Eiji Kisaragi", "Raiden"};
-char* mexico[] = {"Ralf Jones", "Clark Still", "Athena Asamiya"};
-char* ikari[] = {"Leona Heidern", "Ralf Jones", "Clark Still"};
+char* japan[] = {"japan" ,"Kyo Kusanagi", "Benimaru Nikaido", "Goro Daimon"};
+char* usa[] = {"usa" ,"Terry Bogard", "Andy Bogard", "Joe Higashi"};
+char* china[] = {"china" ,"Chin Gentsai", "Chang Koehan", "Choi Bounge"};
+char* brazil[] = {"brazil" ,"Ryo Sakazaki", "Robert Garcia", "Takuma Sakazaki"};
+char* korea[] = {"korea" ,"Kim Kaphwan", "Chang Koehan", "Choi Bounge"};
+char* italy[] = {"italy" ,"Mai Shiranui", "King", "Yuri Sakazaki"};
+char* england[] = {"england" ,"Billy Kane", "Eiji Kisaragi", "Raiden"};
+char* mexico[] = {"mexico" ,"Ralf Jones", "Clark Still", "Athena Asamiya"};
+char* ikari[] = {"ikari" ,"Leona Heidern", "Ralf Jones", "Clark Still"};
 
-char equipos[8][20];
+char equipos[2][4];
 int num_equipos = 0;
 
 
 %}
 %%
 
-"japan" { strcpy(equipos[num_equipos++], *japan); }
-"usa" { strcpy(equipos[num_equipos++], *usa); }
-"china" { strcpy(equipos[num_equipos++], *china); }
-"brazil" { strcpy(equipos[num_equipos++], *brazil); }
-"korea" { strcpy(equipos[num_equipos++], *korea); }
-"italy" { strcpy(equipos[num_equipos++], *italy); }
-"england" { strcpy(equipos[num_equipos++], *england); }
-"mexico" { strcpy(equipos[num_equipos++], *mexico); }
+"japan" {
+  for(int i = 0; i < 4; i++) {
+    equipos[num_equipos++][i] = japan[i];
+}
+"usa" {
+  for(int i = 0; i < 4; i++) {
+    equipos[num_equipos++][i] = usa[i];
+}
 
 
 
@@ -78,7 +78,7 @@ int main(int argc, char** argv) {
     return 1;
   }
 
-  int c;
+  int c;  
   char linea[100];
 
   while (fgets(linea, 100, archivo) != NULL) {
@@ -86,10 +86,12 @@ int main(int argc, char** argv) {
     yylex();
   }
 
-  printf("Equipos reconocidos:\n");
-    for (int i = 0; i < num_equipos; i++) {
-        printf("%s\n", equipos[i]);
-    }
+  for (int i = 0; i < num_equipos; i++) {
+      printf("Equipo: "equipos[i][0]);
+      for (int j = 1; j < 4; j++) {
+          printf("- %s\n", equipos[i][j]);
+      }
+  }
 
   fclose(archivo);
 
